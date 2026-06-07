@@ -1,0 +1,135 @@
+:root {
+  /* =====================================
+     BRAND COLORS
+  ===================================== */
+
+  --primary-color: #172554;
+  --primary-hover-color: #1e40af;
+
+  --secondary-color: #334155;
+
+  --accent-color: #3b82f6;
+  --accent-hover-color: #2563eb;
+
+  --success-color: #22c55e;
+  --warning-color: #f59e0b;
+  --danger-color: #ef4444;
+
+  /* =====================================
+     SURFACE COLORS
+  ===================================== */
+
+  --background-color: #f8fafc;
+  --surface-color: #ffffff;
+  --surface-hover-color: #f1f5f9;
+
+  /* =====================================
+     TEXT COLORS
+  ===================================== */
+
+  --text-color: #0f172a;
+  --text-secondary-color: #334155;
+  --text-light-color: #64748b;
+  --text-muted-color: #94a3b8;
+
+  /* =====================================
+     BORDER COLORS
+  ===================================== */
+
+  --border-color: #e2e8f0;
+  --border-hover-color: #cbd5e1;
+
+  /* =====================================
+     SIDEBAR
+  ===================================== */
+
+  --sidebar-width: 280px;
+
+  --sidebar-bg: linear-gradient(180deg, #172554, #0f172a);
+
+  --sidebar-text: #cbd5e1;
+  --sidebar-text-active: #ffffff;
+
+  /* =====================================
+     HEADER
+  ===================================== */
+
+  --header-height: 90px;
+
+  /* =====================================
+     BORDER RADIUS
+  ===================================== */
+
+  --radius-xs: 6px;
+  --radius-sm: 10px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+  --radius-xl: 32px;
+
+  /* =====================================
+     SHADOWS
+  ===================================== */
+
+  --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.04);
+
+  --shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.06);
+
+  --shadow-md: 0 8px 30px rgba(0, 0, 0, 0.08);
+
+  --shadow-lg: 0 15px 40px rgba(0, 0, 0, 0.12);
+
+  /* =====================================
+     SPACING
+  ===================================== */
+
+  --space-xxs: 0.25rem;
+  --space-xs: 0.5rem;
+  --space-sm: 1rem;
+  --space-md: 1.5rem;
+  --space-lg: 2rem;
+  --space-xl: 3rem;
+  --space-2xl: 4rem;
+
+  /* =====================================
+     TYPOGRAPHY
+  ===================================== */
+
+  --font-family:
+    "Inter", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+
+  --font-size-xs: 0.75rem;
+  --font-size-sm: 0.875rem;
+
+  --font-size-base: 1rem;
+
+  --font-size-lg: 1.125rem;
+  --font-size-xl: 1.5rem;
+
+  --font-size-2xl: 2rem;
+  --font-size-3xl: 2.5rem;
+
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  --font-weight-extrabold: 800;
+
+  /* =====================================
+     TRANSITIONS
+  ===================================== */
+
+  --transition-fast: 0.15s ease;
+
+  --transition: all 0.25s ease;
+
+  --transition-slow: all 0.35s ease;
+
+  /* =====================================
+     Z-INDEX
+  ===================================== */
+
+  --z-dropdown: 100;
+  --z-sticky: 500;
+  --z-sidebar: 900;
+  --z-modal: 1000;
+}

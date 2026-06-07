@@ -1,0 +1,311 @@
+/* =====================================
+   HERO
+===================================== */
+
+.home-hero {
+  background: white;
+
+  border-left: 5px solid var(--accent-color);
+
+  border-radius: var(--radius-lg);
+
+  padding: var(--space-lg);
+
+  box-shadow: var(--shadow-sm);
+
+  margin-bottom: var(--space-lg);
+}
+
+.home-hero h2 {
+  font-size: var(--font-size-3xl);
+
+  color: var(--text-color);
+
+  margin-bottom: var(--space-xs);
+}
+
+.home-hero p {
+  color: var(--text-light-color);
+
+  max-width: 700px;
+}
+
+.news-hero{
+
+    background:
+    linear-gradient(
+        135deg,
+        var(--primary-color),
+        var(--accent-color)
+    );
+
+    color:white;
+
+    padding:3rem;
+
+    border-radius:var(--radius-lg);
+
+    margin-bottom:2rem;
+
+    box-shadow:var(--shadow-lg);
+
+}
+
+.news-hero h2{
+
+    font-size:var(--font-size-3xl);
+
+    margin-bottom:.5rem;
+
+}
+
+.news-hero p{
+
+    color:rgba(255,255,255,.8);
+
+}
+
+/* =====================================
+   STATS
+===================================== */
+
+.stats-grid {
+  display: grid;
+
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+
+  gap: var(--space-md);
+
+  margin-bottom: var(--space-lg);
+}
+
+.card {
+  background: var(--surface-color);
+
+  border-radius: var(--radius-lg);
+
+  padding: var(--space-md);
+
+  border: 1px solid var(--border-color);
+
+  box-shadow: var(--shadow-sm);
+
+  transition: var(--transition);
+}
+
+.card:hover {
+  transform: translateY(-4px);
+
+  box-shadow: var(--shadow-md);
+}
+
+.card h3 {
+  color: var(--text-light-color);
+
+  margin-bottom: var(--space-sm);
+
+  font-size: var(--font-size-sm);
+}
+
+.number {
+  font-size: var(--font-size-2xl);
+
+  font-weight: var(--font-weight-bold);
+
+  color: var(--text-color);
+}
+
+/* =====================================
+   DASHBOARD GRID
+===================================== */
+
+.dashboard-grid {
+  display: grid;
+
+  grid-template-columns: 2fr 1fr;
+
+  gap: var(--space-md);
+
+  margin-bottom: var(--space-lg);
+}
+
+/* =====================================
+   PANELS
+===================================== */
+
+.panel {
+  background: var(--surface-color);
+
+  border-radius: var(--radius-lg);
+
+  padding: var(--space-lg);
+
+  border: 1px solid var(--border-color);
+
+  box-shadow: var(--shadow-sm);
+}
+
+.panel h3 {
+  margin-bottom: var(--space-md);
+
+  color: var(--text-color);
+}
+
+/* =====================================
+   ACTIVITY LIST
+===================================== */
+
+.activity-list {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: var(--space-sm);
+}
+
+.activity-item {
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  padding: var(--space-sm);
+
+  border-radius: var(--radius-md);
+
+  background: var(--background-color);
+}
+
+.activity-item span {
+  color: var(--text-light-color);
+
+  font-size: var(--font-size-sm);
+}
+
+/* =====================================
+   QUICK ACTIONS
+===================================== */
+
+.quick-actions {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: var(--space-sm);
+}
+
+.action-btn {
+  width: 100%;
+
+  padding: 0.9rem;
+
+  border-radius: var(--radius-md);
+
+  background: var(--accent-color);
+
+  color: white;
+
+  font-weight: var(--font-weight-medium);
+
+  transition: var(--transition);
+}
+
+.action-btn:hover {
+  transform: translateY(-2px);
+
+  opacity: 0.95;
+}
+
+/* =====================================
+   TEAM SECTION
+===================================== */
+
+.team-grid {
+  display: grid;
+
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+
+  gap: var(--space-md);
+
+  margin-top: var(--space-lg);
+}
+
+.team-card {
+  background: var(--surface-color);
+
+  border-radius: var(--radius-lg);
+
+  padding: var(--space-md);
+
+  text-align: center;
+
+  border: 1px solid var(--border-color);
+
+  box-shadow: var(--shadow-sm);
+
+  transition: var(--transition);
+}
+
+.team-card:hover {
+  transform: translateY(-4px);
+
+  box-shadow: var(--shadow-md);
+}
+
+.team-avatar {
+  width: 70px;
+  height: 70px;
+
+  border-radius: 50%;
+
+  margin: 0 auto var(--space-sm);
+
+  background: var(--accent-color);
+
+  color: white;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 1.5rem;
+
+  font-weight: var(--font-weight-bold);
+}
+
+.team-card h4 {
+  margin-bottom: 0.25rem;
+
+  color: var(--text-color);
+}
+
+.team-card p {
+  color: var(--text-light-color);
+
+  font-size: var(--font-size-sm);
+}
+
+/* =====================================
+   RESPONSIVE
+===================================== */
+
+@media (max-width: 1024px) {
+  .dashboard-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .home-hero {
+    padding: var(--space-md);
+  }
+
+  .home-hero h2 {
+    font-size: var(--font-size-2xl);
+  }
+
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+}

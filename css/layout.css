@@ -1,0 +1,359 @@
+html,
+body{
+    height:100%;
+    overflow:hidden;
+}
+
+/* App shell: header on top, dashboard fills the rest.
+   Using flex (instead of a fixed height calc on the
+   dashboard) avoids a paint gap under the header. */
+body{
+    display:flex;
+    flex-direction:column;
+}
+
+/* ==========================================
+   HEADER
+========================================== */
+
+.header {
+  height: var(--header-height);
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  padding: 0 var(--space-lg);
+  background: #ffffff;
+  border-bottom: 1px solid var(--border-color);
+  box-shadow: 0 2px 12px rgba(15, 23, 42, 0.05);
+}
+
+/* ==========================================
+   MENU BUTTON
+========================================== */
+
+.menu-btn {
+  display: none;
+
+  background: transparent;
+  border: none;
+
+  color: var(--text-color);
+
+  font-size: 1.5rem;
+
+  margin-right: var(--space-sm);
+
+  cursor: pointer;
+}
+
+/* ==========================================
+   LOGO
+========================================== */
+
+.logo-container {
+  display: flex;
+  align-items: center;
+
+  gap: 1rem;
+}
+
+.logo {
+  width: 60px;
+  height: 60px;
+
+  object-fit: contain;
+
+  flex-shrink: 0;
+}
+
+.logo-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.logo-text h1 {
+  margin: 0;
+
+  font-size: 2.3rem;
+
+  font-weight: 800;
+
+  color: var(--text-color);
+
+  line-height: 1;
+}
+
+.logo-text p {
+  margin-top: 0.25rem;
+
+  color: var(--text-light-color);
+
+  font-size: 0.95rem;
+}
+
+/* ==========================================
+   DASHBOARD
+========================================== */
+
+.dashboard {
+    display: flex;
+    flex: 1;
+    min-height: 0;
+    overflow: hidden;
+}
+
+/* ==========================================
+   SIDEBAR
+========================================== */
+
+.sidebar {
+    width: var(--sidebar-width);
+    background: var(--sidebar-bg);
+    display: flex;
+    flex-direction: column;
+    padding: var(--space-md);
+    box-shadow: 4px 0 20px rgba(0, 0, 0, 0.15);
+    height: 100%;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+/* ==========================================
+   NAVIGATION
+========================================== */
+
+.nav-group {
+  display: flex;
+  flex-direction: column;
+
+  gap: 0.75rem;
+
+  flex: 1;
+}
+
+.nav-btn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  padding: 1rem 1.25rem;
+  min-height: 58px;
+  border: none;
+  border-radius: 14px;
+  background: transparent;
+  color: #cbd5e1;
+  font-size: 1.05rem;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.nav-btn svg {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+}
+
+.nav-btn:hover {
+  background: rgba(255, 255, 255, 0.08);
+  color: white;
+  transform: translateX(4px);
+}
+
+.nav-btn.active {
+  background: linear-gradient(135deg, #2563eb, #3b82f6);
+  color: white;
+  box-shadow: 0 10px 25px rgba(59, 130, 246, 0.35);
+}
+
+.nav-btn:focus-visible {
+  outline: 2px solid #60a5fa;
+  outline-offset: 2px;
+}
+
+/* ==========================================
+   PROFILE
+========================================== */
+
+.sidebar-profile {
+  display: flex;
+  align-items: center;
+
+  gap: 0.75rem;
+
+  padding-top: var(--space-md);
+
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.avatar {
+  width: 44px;
+  height: 44px;
+
+  border-radius: 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: linear-gradient(135deg, #2563eb, #60a5fa);
+
+  color: white;
+
+  font-weight: 700;
+}
+
+.profile-info h3 {
+  color: white;
+
+  font-size: 0.95rem;
+
+  margin: 0;
+}
+
+.profile-info p {
+  margin-top: 0.15rem;
+
+  color: rgba(255, 255, 255, 0.7);
+
+  font-size: 0.8rem;
+}
+
+/* ==========================================
+   CONTENT
+========================================== */
+
+.content {
+    flex: 1;
+    padding: var(--space-lg);
+    background: var(--background-color);
+    overflow-y: auto;
+    height: 100%;
+}
+
+/* ==========================================
+   MODULE CONTAINER
+========================================== */
+
+.module-container {
+  background: white;
+
+  border-radius: 18px;
+
+  padding: var(--space-lg);
+
+  border: 1px solid #e5e7eb;
+
+  box-shadow: 0 4px 20px rgba(15, 23, 42, 0.06);
+
+  animation: fadeIn 0.3s ease;
+}
+
+.module-header {
+  margin-bottom: var(--space-md);
+}
+
+.module-header h2 {
+  margin-bottom: 0.25rem;
+
+  font-size: 1.75rem;
+}
+
+.module-header p {
+  color: var(--text-light-color);
+}
+
+/* ==========================================
+   VIEWS
+========================================== */
+
+.view {
+  display: none;
+}
+
+.active-view {
+  display: block;
+}
+
+/* The views are focused programmatically when you switch
+   tabs (for accessibility/scroll), so they should not show
+   the blue focus outline meant for real interactive elements. */
+.view:focus,
+.view:focus-visible {
+  outline: none;
+}
+
+/* ==========================================
+   ANIMATION
+========================================== */
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ==========================================
+   TABLET
+========================================== */
+
+@media (max-width: 1024px) {
+  .content {
+    padding: var(--space-md);
+  }
+
+  .logo-text h1 {
+    font-size: 2rem;
+  }
+}
+
+/* ==========================================
+   MOBILE
+========================================== */
+
+@media (max-width: 768px) {
+  .menu-btn {
+    display: block;
+  }
+
+  .logo {
+    width: 48px;
+    height: 48px;
+  }
+
+  .logo-text h1 {
+    font-size: 1.6rem;
+  }
+
+  .logo-text p {
+    display: none;
+  }
+
+  .sidebar {
+    position: fixed;
+
+    top: var(--header-height);
+    left: -100%;
+
+    width: 280px;
+
+    height: calc(100vh - var(--header-height));
+
+    z-index: 1000;
+
+    transition: left 0.3s ease;
+  }
+
+  .sidebar.show {
+    left: 0;
+  }
+
+  .content {
+    padding: var(--space-sm);
+  }
+}

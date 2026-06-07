@@ -1,0 +1,254 @@
+/* =====================================
+   CSS RESET
+===================================== */
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* =====================================
+   ROOT
+===================================== */
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+/* =====================================
+   BODY
+===================================== */
+
+body {
+  min-height: 100vh;
+
+  font-family: var(--font-family);
+
+  background: var(--background-color);
+
+  color: var(--text-color);
+
+  line-height: 1.5;
+
+  text-rendering: optimizeLegibility;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* =====================================
+   TYPOGRAPHY
+===================================== */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  line-height: 1.2;
+
+  font-weight: var(--font-weight-bold);
+
+  color: var(--text-color);
+}
+
+p {
+  color: var(--text-secondary-color);
+}
+
+small {
+  font-size: var(--font-size-sm);
+}
+
+/* =====================================
+   IMAGES
+===================================== */
+
+img,
+picture {
+  display: block;
+
+  max-width: 100%;
+}
+
+/* =====================================
+   LINKS
+===================================== */
+
+a {
+  color: inherit;
+
+  text-decoration: none;
+
+  transition: var(--transition-fast);
+}
+
+a:hover {
+  opacity: 0.85;
+}
+
+/* =====================================
+   BUTTONS
+===================================== */
+
+button {
+  border: none;
+
+  outline: none;
+
+  font: inherit;
+
+  background: none;
+
+  cursor: pointer;
+
+  transition: var(--transition);
+}
+
+button:disabled {
+  opacity: 0.6;
+
+  cursor: not-allowed;
+}
+
+/* =====================================
+   FORM ELEMENTS
+===================================== */
+
+input,
+textarea,
+select {
+  width: 100%;
+
+  font: inherit;
+
+  border: 1px solid var(--border-color);
+
+  border-radius: var(--radius-sm);
+
+  padding: 0.75rem 1rem;
+
+  background: var(--surface-color);
+
+  color: var(--text-color);
+
+  transition: var(--transition);
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+
+  border-color: var(--accent-color);
+
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
+}
+
+textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+/* =====================================
+   LISTS
+===================================== */
+
+ul,
+ol {
+  list-style: none;
+}
+
+/* =====================================
+   TABLES
+===================================== */
+
+table {
+  width: 100%;
+
+  border-collapse: collapse;
+}
+
+/* =====================================
+   ACCESSIBILITY
+===================================== */
+
+:focus-visible {
+  outline: 3px solid var(--accent-color);
+
+  outline-offset: 2px;
+}
+
+/* =====================================
+   SKIP LINK
+===================================== */
+
+.skip-link {
+  position: absolute;
+
+  left: -9999px;
+}
+
+.skip-link:focus {
+  left: 1rem;
+  top: 1rem;
+
+  background: var(--surface-color);
+
+  color: var(--text-color);
+
+  padding: 0.75rem 1rem;
+
+  border-radius: var(--radius-sm);
+
+  box-shadow: var(--shadow-md);
+
+  z-index: 9999;
+}
+
+/* =====================================
+   SCROLLBAR
+===================================== */
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--background-color);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border-hover-color);
+
+  border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-light-color);
+}
+
+/* =====================================
+   UTILITY CLASSES
+===================================== */
+
+.hidden {
+  display: none !important;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.surface {
+  background: var(--surface-color);
+
+  border-radius: var(--radius-md);
+
+  box-shadow: var(--shadow-sm);
+}
