@@ -288,3 +288,49 @@ function startTimer() {
 // RESULT SCREEN
 
 
+function showResult() {
+
+  clearInterval(intervalId);
+
+  const totalPercentage =
+    Math.round(
+      (score / (quizData.length * 10)) * 100
+    );
+
+  document.querySelector(".quiz-card")
+    .innerHTML = `
+    
+      <h2>Quiz Completed 🎉</h2>
+
+      <br>
+
+      <h3>Final Score : ${score}</h3>
+
+      <br>
+
+      <h3>${totalPercentage}%</h3>
+
+      <br>
+
+      <button id="restart-btn">
+        Restart Quiz
+      </button>
+
+  `;
+
+  document
+    .getElementById("restart-btn")
+    .addEventListener("click", () => {
+
+      location.reload();
+
+    });
+
+}
+
+
+// START QUIZ
+
+
+loadQuestion();
+startTimer();
