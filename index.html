@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="./css/quiz.css" />
     <link rel="stylesheet" href="./css/news.css" />
     <link rel="stylesheet" href="./css/github.css" />
+    <link rel="stylesheet" href="./css/expense.css" />
   </head>
 
   <body>
@@ -221,7 +222,128 @@
           </div>
         </section>
 
-        <!-- EXPENSE_PLACEHOLDER -->
+        <!-- EXPENSE -->
+        <section id="expense" class="view" tabindex="-1" hidden>
+          <div class="module-container">
+            <div class="module-header">
+              <h2>Expense Tracker Dashboard</h2>
+              <p>Track your income and expenses efficiently.</p>
+            </div>
+
+            <!-- CARDS -->
+            <div class="cardcontainer">
+              <div class="summary-card income">
+                <h3>Total Income</h3>
+                <h2 id="total-income">₹0</h2>
+              </div>
+
+              <div class="summary-card expense">
+                <h3>Total Expense</h3>
+                <h2 id="total-expense">₹0</h2>
+              </div>
+
+              <div class="summary-card balance">
+                <h3>Balance</h3>
+                <h2 id="balance">₹0</h2>
+              </div>
+
+              <div class="summary-card transaction">
+                <h3>Transactions</h3>
+                <h2 id="no-of-expense">0</h2>
+              </div>
+            </div>
+            <!-- transection-expense part -->
+            <div class="transection-expense">
+              <div class="add-transections">
+                <h2>ADD TRANSACTION</h2>
+                <h3>Transections Name</h3>
+                <input
+                  id="name"
+                  type="text"
+                  placeholder="Transactions Name"
+                  required
+                />
+                <br />
+                <h3>Add Transactions Amount</h3>
+                <input
+                  id="amount"
+                  type="number"
+                  placeholder="Transactions Amount"
+                  required
+                />
+                <br />
+                <h3>Add Transactions type</h3>
+                <select id="type_of_exp" name="type_of" required>
+                  <option value="income">Income</option>
+                  <option value="expense">Expense</option>
+                </select>
+                <br />
+                <h3>Add Transactions Category</h3>
+
+                <select id="category" name="category" required>
+                  <option value="salary">salary</option>
+                  <option value="food">Food</option>
+                  <option value="transport">Transport</option>
+                  <option value="shopping">Shopping</option>
+                  <option value="bills">Bills</option>
+                  <option value="others">others</option>
+                </select>
+
+                <button id="add-transaction-btn">ADD TRANSECTION</button>
+              </div>
+
+              <div class="expense-h">
+                <h2>Expense Category</h2>
+
+                <h3>Food</h3>
+                <div class="bar">
+                  <div id="for-food" class="bar-fill"></div>
+                </div>
+
+                <h3>Transport</h3>
+                <div class="bar">
+                  <div id="for-transport" class="bar-fill"></div>
+                </div>
+
+                <h3>Shopping</h3>
+                <div class="bar">
+                  <div id="for-shopping" class="bar-fill"></div>
+                </div>
+
+                <h3>Bills</h3>
+                <div class="bar">
+                  <div id="for-bills" class="bar-fill"></div>
+                </div>
+
+                <h3>Others</h3>
+                <div class="bar">
+                  <div id="for-others" class="bar-fill"></div>
+                </div>
+              </div>
+            </div>
+            <!-- TABLE PART -->
+            <div class="table">
+              <div class="filter-box">
+                <button id="filter-all">All</button>
+                <button id="filter-income">Income</button>
+                <button id="filter-expense">Expense</button>
+              </div>
+              <table>
+                <thead>
+                  <tr>
+                    <th>Title</th>
+                    <th>Type</th>
+                    <th>Amount</th>
+                    <th>Category</th>
+                    <th>Date</th>
+                    <th>Actions</th>
+                  </tr>
+                </thead>
+                <tbody id="transaction-table"></tbody>
+              </table>
+            </div>
+          </div>
+        </section>
 
         <!-- NEWS -->
         <section id="news" class="view" tabindex="-1" hidden>
@@ -393,5 +515,6 @@
     <script type="module" src="./js/modules/quiz/quiz.js"></script>
     <script type="module" src="./js/modules/news/news.js"></script>
     <script type="module" src="./js/modules/Github/github.js"></script>
+    <script type="module" src="./js/modules/expense/expense.js"></script>
   </body>
 </html>
