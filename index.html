@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="./css/news.css" />
     <link rel="stylesheet" href="./css/github.css" />
     <link rel="stylesheet" href="./css/expense.css" />
+    <link rel="stylesheet" href="./css/kanban.css" />
   </head>
 
   <body>
@@ -501,7 +502,18 @@
           </div>
         </section>
 
-        <!-- KANBAN_PLACEHOLDER -->
+        <!-- KANBAN -->
+        <section id="kanban" class="view" tabindex="-1" hidden>
+          <div class="module-container">
+            <div class="module-header">
+              <h2>Kanban Board</h2>
+              <p>Organize tasks and workflows visually.</p>
+            </div>
+
+            <!-- Board: columns are rendered here by JS -->
+            <div id="kanban-board" class="kanban-board"></div>
+          </div>
+        </section>
       </main>
     </div>
 
@@ -516,5 +528,6 @@
     <script type="module" src="./js/modules/news/news.js"></script>
     <script type="module" src="./js/modules/Github/github.js"></script>
     <script type="module" src="./js/modules/expense/expense.js"></script>
+    <script type="module" src="./js/modules/kanban/kanban.js"></script>
   </body>
 </html>

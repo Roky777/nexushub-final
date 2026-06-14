@@ -1,0 +1,236 @@
+/* =====================================
+   KANBAN BOARD
+===================================== */
+
+.kanban-board {
+  display: flex;
+  gap: var(--space-sm);
+  align-items: flex-start;
+  overflow-x: auto;
+  padding-bottom: var(--space-md);
+}
+
+/* =====================================
+   COLUMN
+   A colored header on top of a light body.
+===================================== */
+
+.kanban-column {
+  flex: 0 0 280px;
+  display: flex;
+  flex-direction: column;
+  background: #f1f3f5;
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+}
+
+/* Colored bar at the top of each column.
+   The background color is set inline from the
+   column's color (see render.js). */
+.kanban-column-header {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+  padding: 0.75rem var(--space-sm);
+  color: #fff;
+}
+
+.kanban-column-title {
+  flex: 1;
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-bold);
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+}
+
+.kanban-column-count {
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-bold);
+  background: rgba(255, 255, 255, 0.25);
+  border-radius: var(--radius-xl);
+  padding: 0.1rem 0.55rem;
+}
+
+.kanban-column-delete {
+  border: none;
+  background: transparent;
+  color: rgba(255, 255, 255, 0.8);
+  cursor: pointer;
+  font-size: var(--font-size-sm);
+  line-height: 1;
+  padding: 0.15rem 0.35rem;
+  border-radius: var(--radius-xs);
+}
+
+.kanban-column-delete:hover {
+  background: rgba(255, 255, 255, 0.2);
+  color: #fff;
+}
+
+/* =====================================
+   CARD LIST (drop zone)
+===================================== */
+
+.kanban-card-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+  min-height: 40px;
+  padding: var(--space-sm);
+}
+
+.kanban-card-list.drag-over {
+  background: #e7eaee;
+}
+
+/* =====================================
+   CARD
+===================================== */
+
+.kanban-card {
+  background: var(--surface-color);
+  border-radius: var(--radius-sm);
+  padding: var(--space-sm);
+  cursor: grab;
+  box-shadow: var(--shadow-xs);
+  border: 1px solid var(--border-color);
+}
+
+.kanban-card:hover {
+  box-shadow: var(--shadow-sm);
+}
+
+.kanban-card.dragging {
+  opacity: 0.5;
+}
+
+.kanban-card-text {
+  color: var(--text-color);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  line-height: 1.45;
+  word-break: break-word;
+  margin-bottom: var(--space-xs);
+}
+
+/* Footer row with the action buttons. */
+.kanban-card-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.1rem;
+  border-top: 1px solid var(--border-color);
+  padding-top: var(--space-xs);
+}
+
+.kanban-card-btn {
+  border: none;
+  background: transparent;
+  color: var(--text-light-color);
+  cursor: pointer;
+  font-size: var(--font-size-sm);
+  line-height: 1;
+  padding: 0.25rem 0.4rem;
+  border-radius: var(--radius-xs);
+}
+
+.kanban-card-btn:hover {
+  background: var(--surface-hover-color);
+  color: var(--accent-color);
+}
+
+/* =====================================
+   ADD CARD FORM
+===================================== */
+
+.kanban-add-card {
+  display: flex;
+  gap: var(--space-xs);
+  padding: 0 var(--space-sm) var(--space-sm);
+}
+
+.kanban-add-card-input {
+  flex: 1;
+  border: 1px solid var(--border-color);
+  outline: none;
+  background: var(--surface-color);
+  padding: 0.5rem 0.7rem;
+  border-radius: var(--radius-sm);
+  font-size: var(--font-size-sm);
+}
+
+.kanban-add-card-input:focus {
+  border-color: var(--accent-color);
+}
+
+.kanban-add-card-btn,
+.kanban-add-column-btn {
+  border: none;
+  background: var(--accent-color);
+  color: #fff;
+  cursor: pointer;
+  border-radius: var(--radius-sm);
+  font-weight: var(--font-weight-semibold);
+}
+
+.kanban-add-card-btn {
+  width: 2.4rem;
+  font-size: var(--font-size-lg);
+  line-height: 1;
+}
+
+.kanban-add-card-btn:hover,
+.kanban-add-column-btn:hover {
+  background: var(--accent-hover-color);
+}
+
+/* =====================================
+   ADD COLUMN FORM
+===================================== */
+
+.kanban-add-column {
+  flex: 0 0 250px;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+  border: 2px dashed var(--border-hover-color);
+  border-radius: var(--radius-sm);
+  padding: var(--space-sm);
+}
+
+.kanban-add-column-input {
+  border: 1px solid var(--border-color);
+  outline: none;
+  background: var(--surface-color);
+  padding: 0.5rem 0.7rem;
+  border-radius: var(--radius-sm);
+  font-size: var(--font-size-sm);
+}
+
+.kanban-add-column-input:focus {
+  border-color: var(--accent-color);
+}
+
+.kanban-add-column-btn {
+  padding: 0.5rem;
+  font-size: var(--font-size-sm);
+}
+
+/* =====================================
+   MOBILE FALLBACK
+   On phones, columns stack vertically and
+   the "move to next" (→) button is used
+   instead of dragging.
+===================================== */
+
+@media (max-width: 768px) {
+  .kanban-board {
+    flex-direction: column;
+    overflow-x: visible;
+  }
+
+  .kanban-column,
+  .kanban-add-column {
+    flex: 1 1 auto;
+    width: 100%;
+  }
+}
