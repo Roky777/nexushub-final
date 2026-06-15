@@ -11,7 +11,7 @@ export function renderArticles(
         <img
           class="news-image"
           src="${
-            article.urlToImage ||
+            article.image ||
             "https://via.placeholder.com/400x250"
           }"
         >
