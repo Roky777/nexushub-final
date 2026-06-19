@@ -12,16 +12,31 @@ const categoryButtons = document.querySelectorAll(".category-btn");
 const searchInput = document.getElementById("search-input");
 const searchBtn = document.getElementById("search-btn");
 
+// Cache fetched articles per category so re-opening a category
+// doesn't spend another API request (the free GNews plan is limited).
+const newsCache = {};
+
 // Function to load category news
 
 async function loadNews(category = "general") {
+  // Serve from cache if we already fetched this category.
+  if (newsCache[category]) {
+    renderArticles(newsContainer, newsCache[category]);
+    return;
+  }
+
   try {
     showLoader(loader);
     clearError(errorBox);
     const data = await fetchTopNews(category);
+    newsCache[category] = data.articles;
     renderArticles(newsContainer, data.articles);
   } catch (error) {
-    showError(errorBox, error.message);
+    showError(
+      errorBox,
+      "Couldn't load news right now — the free news API request limit may " +
+        "have been reached. Please try again later."
+    );
   } finally {
     hideLoader(loader);
   }
@@ -92,8 +107,26 @@ searchInput.addEventListener("input", () => {
   }, 800);
 });
 
-// Load general news when page opens
+// Lazy-load: only fetch news the first time the News tab is opened,
+// instead of on every page load. This avoids spending an API request
+// for visitors who never open the News section.
 
-document.addEventListener("DOMContentLoaded", () => {
+let newsLoaded = false;
+
+function ensureNewsLoaded() {
+  if (newsLoaded) return;
+  newsLoaded = true;
   loadNews();
+}
+
+// Load when the News nav button is clicked...
+document
+  .querySelector('.nav-btn[data-view="news"]')
+  ?.addEventListener("click", ensureNewsLoaded);
+
+// ...or immediately if the page opens already on the News view
+// (e.g. the last-viewed tab was restored).
+document.addEventListener("DOMContentLoaded", () => {
+  const newsView = document.getElementById("news");
+  if (newsView && !newsView.hidden) ensureNewsLoaded();
 });
