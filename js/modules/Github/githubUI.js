@@ -1,5 +1,5 @@
 const avatar = document.getElementById("avatar");
-const nameElement = document.getElementById("name");
+const nameElement = document.getElementById("gh-name");
 const bio = document.getElementById("bio");
 const followers = document.getElementById("followers");
 const following = document.getElementById("following");
